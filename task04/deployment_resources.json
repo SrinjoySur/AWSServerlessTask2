@@ -52,14 +52,7 @@
       "lambda-basic-execution"
     ],
     "resource_type": "iam_role",
-    "tags": {},
-    "event_sources": [
-      {
-        "resource_type": "sns_topic_trigger",
-        "target_topic": "lambda_topic",
-        "region": "eu-central-1"
-      }
-    ]
+    "tags": {}
   },
   "async_queue": {
     "resource_type": "sqs_queue",
@@ -77,7 +70,13 @@
   "lambda_topic": {
     "resource_type": "sns_topic",
     "region": "eu-central-1",
-    "event_sources": [],
+    "event_sources": [
+      {
+        "resource_type": "lambda",
+        "resource_name": "sns_handler",
+        "region": "eu-central-1"
+      }
+    ],
     "tags": {}
   }
 }

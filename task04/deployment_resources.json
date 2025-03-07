@@ -72,7 +72,7 @@
     "region": "eu-central-1",
     "event_sources": [
       {
-        "target_rule": "hello_world",
+        "target_rule": "sns_handler",
         "resource_type": "lambda"
       }
     ],

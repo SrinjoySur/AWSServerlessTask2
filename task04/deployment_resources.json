@@ -73,7 +73,8 @@
     "event_sources": [
       {
         "resource_type": "lambda",
-        "resource_name": "sns_handler"
+        "resource_name": "sns_handler",
+        "region": "eu-central-1"
       }
     ],
     "tags": {}

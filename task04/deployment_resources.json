@@ -32,18 +32,7 @@
       "lambda-basic-execution"
     ],
     "resource_type": "iam_role",
-    "tags": {},
-    "event_sources": [
-      {
-        "resource_type": "sqs_trigger",
-        "target_queue": "async_queue",
-        "batch_size": 123,
-        "batch_window": 123,
-        "function_response_types": [
-          "ReportBatchItemFailures"
-        ]
-      }
-    ]
+    "tags": {}
   },
   "sns_handler-role": {
     "predefined_policies": [],
@@ -54,10 +43,16 @@
     "resource_type": "iam_role",
     "tags": {}
   },
+  "lambda_topic": {
+    "resource_type": "sns_topic",
+    "region": "eu-central-1",
+    "event_sources": [],
+    "tags": {}
+  },
   "async_queue": {
     "resource_type": "sqs_queue",
     "fifo_queue": false,
-    "visibility_timeout": 30,
+    "visibility_timeout": 150,
     "delay_seconds": 0,
     "maximum_message_size": 1024,
     "message_retention_period": 60,
@@ -65,17 +60,6 @@
     "policy": {},
     "redrive_policy": {},
     "content_based_deduplication": false,
-    "tags": {}
-  },
-  "lambda_topic": {
-    "resource_type": "sns_topic",
-    "region": "eu-central-1",
-    "event_sources": [
-      {
-        "target_rule": "sns_handler",
-        "resource_type": "lambda"
-      }
-    ],
     "tags": {}
   }
 }

@@ -70,7 +70,12 @@
   "lambda_topic": {
     "resource_type": "sns_topic",
     "region": "eu-central-1",
-    "event_sources": [],
+    "event_sources": [
+      {
+        "target_rule": "hello_world",
+        "resource_type": "lambda"
+      }
+    ],
     "tags": {}
   }
 }
